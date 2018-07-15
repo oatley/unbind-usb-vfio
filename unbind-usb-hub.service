@@ -1,0 +1,13 @@
+[Unit]
+Description=unbind usb devices and unload kernel module on usb hub
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/unbind-usb-vfio -y
+User=root
+Group=root
+
+[Install]
+WantedBy=graphical.target
+
